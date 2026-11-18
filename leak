@@ -1,0 +1,113 @@
+➜  get_next_line git:(main) ✗ valgrind --leak-check=full ./a.out
+==719014== Memcheck, a memory error detector
+==719014== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==719014== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==719014== Command: ./a.out
+==719014== 
+q
+
+==719014== Invalid read of size 1
+==719014==    at 0x484ED16: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x48EBC80: __vfprintf_internal (vfprintf-internal.c:1517)
+==719014==    by 0x48D572E: printf (printf.c:33)
+==719014==    by 0x401570: main (get_next_line.c:105)
+==719014==  Address 0x4aa1680 is 0 bytes inside a block of size 3 free'd
+==719014==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x401585: main (get_next_line.c:107)
+==719014==  Block was alloc'd at
+==719014==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x4013FF: ft_extract (get_next_line.c:41)
+==719014==    by 0x40125E: get_next_line (get_next_line.c:87)
+==719014==    by 0x401578: main (get_next_line.c:106)
+==719014== 
+==719014== Invalid read of size 1
+==719014==    at 0x484ED24: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x48EBC80: __vfprintf_internal (vfprintf-internal.c:1517)
+==719014==    by 0x48D572E: printf (printf.c:33)
+==719014==    by 0x401570: main (get_next_line.c:105)
+==719014==  Address 0x4aa1681 is 1 bytes inside a block of size 3 free'd
+==719014==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x401585: main (get_next_line.c:107)
+==719014==  Block was alloc'd at
+==719014==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x4013FF: ft_extract (get_next_line.c:41)
+==719014==    by 0x40125E: get_next_line (get_next_line.c:87)
+==719014==    by 0x401578: main (get_next_line.c:106)
+==719014== 
+==719014== Invalid read of size 1
+==719014==    at 0x4900684: _IO_new_file_xsputn (fileops.c:1220)
+==719014==    by 0x4900684: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1198)
+==719014==    by 0x48EBF5B: outstring_func (vfprintf-internal.c:239)
+==719014==    by 0x48EBF5B: __vfprintf_internal (vfprintf-internal.c:1517)
+==719014==    by 0x48D572E: printf (printf.c:33)
+==719014==    by 0x401570: main (get_next_line.c:105)
+==719014==  Address 0x4aa1681 is 1 bytes inside a block of size 3 free'd
+==719014==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x401585: main (get_next_line.c:107)
+==719014==  Block was alloc'd at
+==719014==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x4013FF: ft_extract (get_next_line.c:41)
+==719014==    by 0x40125E: get_next_line (get_next_line.c:87)
+==719014==    by 0x401578: main (get_next_line.c:106)
+==719014== 
+==719014== Invalid read of size 1
+==719014==    at 0x48534F0: mempcpy (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x49005B4: _IO_new_file_xsputn (fileops.c:1237)
+==719014==    by 0x49005B4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1198)
+==719014==    by 0x48EBF5B: outstring_func (vfprintf-internal.c:239)
+==719014==    by 0x48EBF5B: __vfprintf_internal (vfprintf-internal.c:1517)
+==719014==    by 0x48D572E: printf (printf.c:33)
+==719014==    by 0x401570: main (get_next_line.c:105)
+==719014==  Address 0x4aa1680 is 0 bytes inside a block of size 3 free'd
+==719014==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x401585: main (get_next_line.c:107)
+==719014==  Block was alloc'd at
+==719014==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x4013FF: ft_extract (get_next_line.c:41)
+==719014==    by 0x40125E: get_next_line (get_next_line.c:87)
+==719014==    by 0x401578: main (get_next_line.c:106)
+==719014== 
+q
+
+q
+
+q
+
+q
+
+q
+
+q
+
+q
+
+
+
+
+
+
+
+
+
+
+
+==719014== 
+==719014== HEAP SUMMARY:
+==719014==     in use at exit: 3 bytes in 1 blocks
+==719014==   total heap usage: 44 allocs, 43 frees, 1,215 bytes allocated
+==719014== 
+==719014== 3 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==719014==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==719014==    by 0x4013FF: ft_extract (get_next_line.c:41)
+==719014==    by 0x40125E: get_next_line (get_next_line.c:87)
+==719014==    by 0x40154C: main (get_next_line.c:102)
+==719014== 
+==719014== LEAK SUMMARY:
+==719014==    definitely lost: 3 bytes in 1 blocks
+==719014==    indirectly lost: 0 bytes in 0 blocks
+==719014==      possibly lost: 0 bytes in 0 blocks
+==719014==    still reachable: 0 bytes in 0 blocks
+==719014==         suppressed: 0 bytes in 0 blocks
+==719014== 
+==719014== For lists of detected and suppressed errors, rerun with: -s
+==719014== ERROR SUMMARY: 63 errors from 5 contexts (suppressed: 0 from 0)
