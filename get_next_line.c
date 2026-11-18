@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alnoukan <alnoukan@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/19 14:48:41 by anoukan          ###   ########.fr       */
+/*   Updated: 2026/11/18 20:22:52 by alnoukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,39 +52,36 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 		len++;
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
-		return (free(*stash), free(*buffer), NULL);
+		return (free(*stash), NULL);
 	if ((*stash)[0] == '\n' && len == 0)
 		result[len++] = '\n';
 	ft_strncpy(result, *stash, len);
 	result[len] = '\0';
 	*stash = ft_clean(*stash);
-	return (free(*buffer), (*buffer) = NULL, result);
+	return (result);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*stash;
-	char		*buffer;
+	static char	buffer[BUFFER_SIZE + 1];
+	char		*stash;
 	int			bytes_read;
 
 	if (fd < 0)
 		return (free(stash), stash = NULL, NULL);
-	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buffer)
-		return (NULL);
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
 	if (bytes_read < 0)
-		return (free(buffer), buffer = NULL, free(stash), stash = NULL, NULL);
+		return (free(stash), stash = NULL, NULL);
 	buffer[bytes_read] = '\0';
 	if (!stash)
 	{
 		stash = malloc(sizeof(char));
 		if (!stash)
-			return (free(buffer), NULL);
+			return (NULL);
 		*stash = '\0';
 	}
 	stash = ft_strjoin(stash, buffer);
 	if (stash[0] == '\0')
-		return (free(stash), stash = NULL, free(buffer), buffer = NULL, NULL);
+		return (free(stash), stash = NULL, NULL);
 	return (get_next_line_2(&stash, &buffer, &bytes_read, fd));
 }
