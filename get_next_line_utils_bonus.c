@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alnoukan <alnoukan@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/19 12:57:56 by anoukan          ###   ########.fr       */
+/*   Created: 2026/11/18 20:29:14 by alnoukan          #+#    #+#             */
+/*   Updated: 2026/11/18 20:29:15 by alnoukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

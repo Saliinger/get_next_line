@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alnoukan <alnoukan@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/19 12:56:50 by anoukan          ###   ########.fr       */
+/*   Created: 2026/11/18 20:29:01 by alnoukan          #+#    #+#             */
+/*   Updated: 2026/11/18 20:29:03 by alnoukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	f;
 	size_t	g;
 
-	d = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	f = 0;
 	g = 0;
+	d = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!d)
 		return (free(s1), NULL);
 	while (s1[f])

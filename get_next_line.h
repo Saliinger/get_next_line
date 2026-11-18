@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: alnoukan <alnoukan@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 12:20:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/19 12:56:22 by anoukan          ###   ########.fr       */
+/*   Created: 2026/11/18 20:29:48 by alnoukan          #+#    #+#             */
+/*   Updated: 2026/11/18 20:39:26 by alnoukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ int		ft_strlen(char const *s);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_verify(char *stash);
-char	*ft_clean(char *stash);
 
 #endif
