@@ -24,6 +24,11 @@
 #  define BUFFER_SIZE 42
 # endif
 
+// Max number of fds handled at once
+# ifndef FD_MAX
+#  define FD_MAX 1024
+# endif
+
 // base function
 char	*get_next_line(int fd);
 
@@ -32,6 +37,5 @@ int		ft_strlen(char const *s);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_verify(char *stash);
-char	*ft_clean(char *stash);
 
 #endif

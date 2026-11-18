@@ -66,26 +66,26 @@ static char	*get_next_line_2(char *stash, char *buffer, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[1024][BUFFER_SIZE + 1];
+	static char	buffer[FD_MAX][BUFFER_SIZE + 1];
 	char		*stash;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= FD_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash = malloc(sizeof(char));
 	if (!stash)
 		return (NULL);
 	stash[0] = '\0';
-	stash = ft_strjoin(stash, buffer);
+	stash = ft_strjoin(stash, buffer[fd]);
 	if (!stash)
 		return (NULL);
-	stash = get_next_line_2(stash, buffer, fd);
+	stash = get_next_line_2(stash, buffer[fd], fd);
 	if (!stash)
 		return (NULL);
 	if (stash[0] == '\0')
 		return (free(stash), NULL);
 	line = ft_extract(stash);
 	free(stash);
-	ft_clean(buffer);
+	ft_clean(buffer[fd]);
 	return (line);
 }
