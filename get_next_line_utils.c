@@ -69,17 +69,14 @@ char	*ft_strjoin(char *s1, char *s2)
 
 int	ft_verify(char *stash)
 {
-	size_t	i;
-	size_t	v;
+	int	i;
 
-	v = 0;
-	i = ft_strlen(stash);
-	while (stash[v] != '\n' && i != 0)
+	i = 0;
+	while (stash[i])
 	{
-		i--;
-		v++;
+		if (stash[i] == '\n')
+			return (1);
+		i++;
 	}
-	if (stash[i] == '\n' || stash[i] == '\0')
-		return (1);
 	return (0);
 }
