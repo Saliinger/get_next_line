@@ -6,7 +6,7 @@
 /*   By: alnoukan <alnoukan@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2026/11/18 20:53:51 by alnoukan         ###   ########.fr       */
+/*   Updated: 2026/11/18 20:57:52 by alnoukan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ int	main(void)
 	while (test)
 	{
 		printf("%s\n", test);
-		test = get_next_line(fd);
 		free(test);
+		test = get_next_line(fd);
 	}
 	free(test);
 	close(fd);
